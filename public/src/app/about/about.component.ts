@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { TacoService } from '../taco.service';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _tacoService: TacoService) {
+    this._tacoService.loadScript();
+  }
 
   ngOnInit() {
   }

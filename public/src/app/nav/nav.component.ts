@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TacoService } from '../taco.service';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
