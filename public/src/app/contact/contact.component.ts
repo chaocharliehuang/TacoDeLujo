@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  messageReceived = false;
+
+  message = {
+    name: '',
+    text: ''
+  }
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.messageReceived = true;
+    this.message = {
+      name: '',
+      text: ''
+    }
   }
 
 }

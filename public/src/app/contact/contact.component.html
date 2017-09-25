@@ -1,3 +1,61 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+    <div class="text-center">
+      <h4>We hope to see you soon!</h4>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 submissions">
+        <h5>We look forward to your visit:</h5>
+        <p class="address">
+          Taco de Lujo<br>
+          1701 Story Rd<br>
+          San Jose, CA 95122<br>
+          Phone: 408-555-5555<br>
+          Open daily: 11AM - 11PM
+        </p>
+        <iframe
+        width="100%"
+        height="100%"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1dLmrHL--ejhFmKBOVFyYOWIDwpvG3gM&q=1701+Story+Rd,San+Jose,+CA" allowfullscreen>
+      </iframe>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <h5>We would love to hear from you:</h5>
+        <form #formData="ngForm" (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+              minlength="2"
+              maxlength="256"
+              [(ngModel)]="message.name"
+              #nameval="ngModel">
+            <small class="form-text text-danger" *ngIf="nameval.errors">Name must be at least 2 characters in length</small>
+          </div>
+  
+          <div class="form-group">
+            <label for="text">Message:</label>
+            <textarea
+              name="text"
+              class="form-control"
+              id="text"
+              rows="5"
+              required
+              minlength="10"
+              maxlength="256"
+              [(ngModel)]="message.text"
+              #textval="ngModel">
+            </textarea>
+            <small class="form-text text-danger" *ngIf="textval.errors">Message must be at least 10 characters in length</small>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!formData.valid">
+          <span class="text-success" *ngIf="messageReceived">Message received!</span>
+        </form>
+      </div>
+    </div>
+  </div>

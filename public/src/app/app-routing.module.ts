@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { MenuComponent } from './menu/menu.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
-import { ReviewsComponent } from './reviews/reviews.component';
 import { CareersComponent } from './careers/careers.component';
 import { ContactComponent } from './contact/contact.component';
 
@@ -13,7 +12,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'suggestions', component: SuggestionsComponent },
-  { path: 'reviews', component: ReviewsComponent },
   { path: 'careers', component: CareersComponent },
   { path: 'contact', component: ContactComponent }
 ];

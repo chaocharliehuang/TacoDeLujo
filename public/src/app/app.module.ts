@@ -12,7 +12,6 @@ import { MenuComponent } from './menu/menu.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { ContactComponent } from './contact/contact.component';
 import { CareersComponent } from './careers/careers.component';
-import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
     MenuComponent,
     SuggestionsComponent,
     ContactComponent,
-    CareersComponent,
-    ReviewsComponent
+    CareersComponent
   ],
   imports: [
     BrowserModule,
