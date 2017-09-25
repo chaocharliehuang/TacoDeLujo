@@ -1,0 +1,12 @@
+form {
+    margin-top: 20px;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.submissions {
+    height: 75vh;
+    overflow: scroll;
+}

@@ -4,7 +4,7 @@ var Recipe = mongoose.model('Recipe');
 
 module.exports = {
     showAll: function(req, res) {
-        Recipe.find({}).sort('-createdAt').exec(function(err, recipes) {
+        Recipe.find({}).sort('-createdAt').limit(20).exec(function(err, recipes) {
             if (!err) {
                 return res.json(recipes);
             }
@@ -17,7 +17,11 @@ module.exports = {
         });
         recipe.save(function(err) {
             if (!err) {
-                return res.json(recipe);
+                Recipe.find({}).sort('-createdAt').limit(20).exec(function(err, recipes) {
+                    if (!err) {
+                        return res.json(recipes);
+                    }
+                });
             }
         });
     }

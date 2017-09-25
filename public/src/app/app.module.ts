@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { TacoService } from './taco.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +27,9 @@ import { ReviewsComponent } from './reviews/reviews.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [TacoService],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 var path = require('path');
-// app.use(express.static(path.join(__dirname, '/public/dist')));
+app.use(express.static(path.join(__dirname, '/public/dist')));
 
 require('./server/config/mongoose.js');
 

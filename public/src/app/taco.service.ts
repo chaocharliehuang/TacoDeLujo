@@ -1,9 +1,50 @@
 import { Injectable } from '@angular/core';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class TacoService {
 
-  constructor() { }
+  recipes;
+
+  constructor(private _http: Http) { }
+
+  retrieveRecipes(callback) {
+    this._http.get('/recipes').subscribe(
+      (response) => {
+        this.recipes = response.json();
+        callback(this.recipes);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  addRecipe(recipe, callback) {
+    let body = JSON.stringify(recipe);
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    this._http.post('/recipes', body, options).subscribe(
+      (response) => {
+        this.recipes = response.json();
+        callback(this.recipes);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getRandomRecipe(callback) {
+    this._http.get('http://taco-randomizer.herokuapp.com/random/').subscribe(
+      (response) => {
+        callback(response.json());
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 
   loadScript() {
     document.addEventListener('DOMContentLoaded', function(){
