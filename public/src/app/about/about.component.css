@@ -95,7 +95,11 @@
 }
 
 @media(max-width:768px){
-    h3, p {
-        font-size: 75%;
+    .content-body h3, .content-body p {
+        font-size: 65%;
     }
+}
+
+#familia {
+    width: 80%;
 }

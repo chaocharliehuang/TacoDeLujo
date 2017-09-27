@@ -1,11 +1,18 @@
 <div class="container">
+
   <div class="text-center">
     <h4>If we like your suggestion, we'll add it to our menu!</h4>
     <br>
   </div>
+
   <div class="row">
+
     <div class="col-md-6 col-sm-12">
       <h5>Suggest a taco recipe:</h5>
+
+      <button class="btn btn-primary" id="random_btn" (click)="getRandomRecipe()">Get Random Recipe</button>
+      <br>
+
       <form #formData="ngForm" (submit)="onSubmit()">
         <div class="form-group">
           <label for="name">Name:</label>
@@ -22,9 +29,6 @@
           <small class="form-text text-danger" *ngIf="authorval.errors">Name must be at least 2 characters in length</small>
         </div>
 
-        <button class="btn btn-primary" (click)="getRandomRecipe()">Get Random Recipe</button>
-        <br><br>
-
         <div class="form-group">
           <label for="recipe">Recipe:</label>
           <textarea
@@ -40,9 +44,12 @@
           </textarea>
           <small class="form-text text-danger" *ngIf="recipeval.errors">Recipe must be at least 10 characters in length</small>
         </div>
+
         <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!formData.valid">
       </form>
+
     </div>
+
     <div class="col-md-6 col-sm-12 submissions">
       <h5>Recently submitted recipes:</h5>
       <div class="card bg-secondary text-white" *ngFor="let recipe of recipes">
